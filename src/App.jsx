@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -6,7 +6,14 @@ function App() {
 
   return (
     <>
-      <h1>Sam's Dev Lab</h1>
+      <main className="app">
+        <section className="resume-builder">
+          <p>Sam's Dev Lab</p>
+        </section>
+        <section className="resume">
+          <p>SDL's Resume</p>
+        </section>
+      </main>
     </>
   );
 }
