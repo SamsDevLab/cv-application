@@ -10,3 +10,9 @@ Experience Component Requirements:
 • Edit Button (to change info)
 • Submit Button (to update info)
 */
+
+function Experience() {
+  return console.log("Experience Info");
+}
+
+export default Experience;

@@ -9,3 +9,9 @@ General Info Component Requirements:
 • Edit Button (to change info)
 • Submit Button (to update info)
 */
+
+function General() {
+  return console.log("General Info");
+}
+
+export default General;
