@@ -3,7 +3,8 @@ import "./ResumeBuilder.css";
 function ResumeBuilder() {
   return (
     <section className="resume-builder">
-      <p>Sam's Dev Lab</p>
+      <h2>SDL's Resume Builder</h2>
+      <main className="main-container"></main>
     </section>
   );
 }

@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import "./App.css";
-import ResumeBuilder from "./components/ResumeBuilder/ResumeBuilder.jsx";
-import ResumePreview from "./components/ResumePreview/ResumePreview.jsx";
+import ResumeBuilder from "./components/resume-builder/ResumeBuilder.jsx";
+import ResumePreview from "./components/resume-preview/ResumePreview.jsx";
 
 function App() {
   return (
