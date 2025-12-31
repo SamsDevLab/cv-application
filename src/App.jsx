@@ -1,18 +1,14 @@
 // import { useState } from "react";
 import "./App.css";
+import ResumeBuilder from "./components/ResumeBuilder/ResumeBuilder.jsx";
+import ResumePreview from "./components/ResumePreview/ResumePreview.jsx";
 
 function App() {
-  // const [count, setCount] = useState(0);
-
   return (
     <>
       <main className="app">
-        <section className="resume-builder">
-          <p>Sam's Dev Lab</p>
-        </section>
-        <section className="resume">
-          <p>SDL's Resume</p>
-        </section>
+        <ResumeBuilder />
+        <ResumePreview />
       </main>
     </>
   );
