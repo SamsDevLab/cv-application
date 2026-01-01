@@ -1,9 +1,10 @@
 import "../../styles/ResumePreview.css";
+import Resume from "./Resume";
 
 function ResumePreview() {
   return (
     <section className="resume-preview">
-      <p>SDL's Resume</p>
+      <Resume />
     </section>
   );
 }
