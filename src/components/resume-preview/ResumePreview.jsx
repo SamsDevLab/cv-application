@@ -1,4 +1,4 @@
-import "./ResumePreview.css";
+import "../../styles/ResumePreview.css";
 
 function ResumePreview() {
   return (
