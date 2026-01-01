@@ -1,21 +1,10 @@
 .resume-builder {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: space-evenly;
   background-color: ivory;
   min-height: 100vh;
   min-width: 30vw;
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: cornflowerblue;
-  min-height: 92vh;
-  min-width: 92%;
-  border-radius: 0.2rem;
   gap: 2rem;
 }
