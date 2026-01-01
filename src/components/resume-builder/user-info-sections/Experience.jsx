@@ -33,6 +33,10 @@ function Experience() {
         <label htmlFor="dates">Dates Employed: </label>
         <input type="text" id="dates" />
       </div>
+      <div className="button-container">
+        <button>Edit</button>
+        <button>Submit</button>
+      </div>
     </div>
   );
 }
