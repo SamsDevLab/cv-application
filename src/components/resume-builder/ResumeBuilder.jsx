@@ -1,4 +1,4 @@
-import "./ResumeBuilder.css";
+import "../../styles/ResumeBuilder.css";
 import General from "./user-info-sections/General";
 import Education from "./user-info-sections/Education";
 import Experience from "./user-info-sections/Experience";

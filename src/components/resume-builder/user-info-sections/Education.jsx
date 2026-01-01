@@ -10,7 +10,7 @@ Education Component Requirements:
 • Submit Button (to update info)
 */
 
-import "../user-info-sections/SectionStyles.css";
+import "../../../styles/SectionStyles.css";
 
 function Education() {
   return (

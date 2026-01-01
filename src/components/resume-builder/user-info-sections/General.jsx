@@ -12,7 +12,7 @@ General Info Component Requirements:
 
 // Start here tomorrow - keep building out the wireframe with buttons before moving on to another component
 
-import "../user-info-sections/SectionStyles.css";
+import "../../../styles/SectionStyles.css";
 
 function General() {
   return (
