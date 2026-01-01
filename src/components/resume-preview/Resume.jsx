@@ -15,24 +15,27 @@ function Resume() {
       <main>
         <section className="education-container">
           <h2>Education</h2>
-          <ul>
-            <li>School: University of Louisville</li>
-            <li>Major: English Literature</li>
-            <li>Years attended: 2007-2011</li>
-          </ul>
+          <div className="details-container">
+            <p>University of Louisville</p>
+            <p>Louisville, KY</p>
+          </div>
+          <div className="details-container secondary">
+            <p>BA - English Literature</p>
+            <p>2007-2011</p>
+          </div>
         </section>
         <hr />
         <section className="experience-container">
           <h2>Experience</h2>
-          <ul>
-            <li>Company Name: CrowdStrike</li>
-            <li>Position Title: Software Developer</li>
-            <li>
-              Responsibilities: did a bunch of wanking and things while I worked
-              here. Didn't hit quota once.
-            </li>
-            <li>Dates Employed: </li>
-          </ul>
+          <div className="details-container">
+            <p>CrowdStrike</p>
+            <p>Austin, TX</p>
+          </div>
+          <div className="details-container secondary">
+            <p>Software Developer</p>
+            <p>November 2023 - July 2024</p>
+          </div>
+          <p>65+ cold calls a day supporting three different sales reps</p>
         </section>
       </main>
     </div>
