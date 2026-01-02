@@ -11,7 +11,7 @@ export const educationData = {
   to: "05/2011",
 };
 
-export const experienceState = {
+export const experienceData = {
   company: "CrowdStrike",
   position: "Software Developer",
   responsibilities: "Breaking stuff right before it ships end prod",
