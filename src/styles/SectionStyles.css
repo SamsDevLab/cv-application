@@ -16,6 +16,25 @@
   gap: 0.25rem;
 }
 
+.date-container {
+  display: flex;
+  justify-content: space-between;
+  min-width: 100%;
+  gap: 1rem;
+}
+
+.date-container input {
+  min-width: 45%;
+}
+
+.from-container,
+.to-container {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  gap: 0.2rem;
+}
+
 .button-container {
   display: flex;
   justify-content: center;
