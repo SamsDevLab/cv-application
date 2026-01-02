@@ -1,50 +1,63 @@
-/*
-Experience Component Requirements: 
-• Company Name
-• Title / Position
-• Responsibilities
-• Dates worked at the company
-
-• Add Button
-• Delete Button
-• Edit Button (to change info)
-• Submit Button (to update info)
-*/
-
 import "../../../styles/SectionStyles.css";
+import { experienceData } from "../../../data";
+import { useState } from "react";
+import FormElement from "./FormElement";
+import DateRangeInput from "./DateRangeInput";
+import ButtonContainer from "./ButtonContainer";
 
 function Experience() {
+  const [experienceState, setExperienceState] = useState(experienceData);
+
+  const handleCompanyChange = (event) => {
+    setExperienceState({ ...experienceState, company: event.target.value });
+  };
+
+  const handleTitleChange = (event) => {
+    setExperienceState({ ...experienceState, title: event.target.value });
+  };
+
+  const handleResponsibilitiesChange = (event) => {
+    setExperienceState({
+      ...experienceState,
+      responsibilities: event.target.value,
+    });
+  };
+
+  const handleFromDateChange = (event) => {
+    setExperienceState({ ...experienceState, from: event.target.value });
+  };
+
+  const handleToDateChange = (event) => {
+    setExperienceState({ ...experienceState, to: event.target.value });
+  };
+
   return (
     <div className="section-container">
       <h2>Experience</h2>
-      <div className="input-container">
-        <label htmlFor="company-name">Company Name: </label>
-        <input type="text" id="company-name" />
-      </div>
-      <div className="input-container">
-        <label htmlFor="title">Title: </label>
-        <input type="text" id="title" />
-      </div>
-      <div className="input-container">
-        <label htmlFor="responsibilities">Responsibilities: </label>
-        <textarea type="text" id="responsibilities" />
-      </div>
-      <div className="input-container">
-        <div className="date-container">
-          <div className="from-container">
-            <label htmlFor="from">From: </label>
-            <input type="date" id="from" />
-          </div>
-          <div className="to-container">
-            <label htmlFor="to">To: </label>
-            <input type="date" id="to" />
-          </div>
-        </div>
-      </div>
-      <div className="button-container">
-        <button>Edit</button>
-        <button>Submit</button>
-      </div>
+      <FormElement
+        inputType="text"
+        inputId="company-name"
+        inputLabelText="Company"
+        changeFn={(event) => handleCompanyChange(event)}
+      />
+
+      <FormElement
+        inputType="text"
+        inputId="title"
+        inputLabelText="Title"
+        changeFn={(event) => handleTitleChange(event)}
+      />
+      <FormElement
+        inputType="textarea"
+        inputId="responsibilites"
+        inputLabelText="Responsibilities"
+        changeFn={(event) => handleResponsibilitiesChange(event)}
+      />
+      <DateRangeInput
+        changeFromDateFn={(event) => handleFromDateChange(event)}
+        changeToDateFn={(event) => handleToDateChange(event)}
+      />
+      <ButtonContainer />
     </div>
   );
 }
