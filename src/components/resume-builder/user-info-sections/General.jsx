@@ -2,14 +2,7 @@ import "../../../styles/SectionStyles.css";
 import { generalData } from "../../../data";
 import { useState } from "react";
 import FormElement from "./FormElement.jsx";
-
-/*
-Pseudocode: 
-
-• Need to be able to update the values in generalInfo obj in realtime using 
-  setGeneralInfo fn
-  • Do this by passing in props
-*/
+import ButtonContainer from "./ButtonContainer.jsx";
 
 function General() {
   const [generalState, setGeneralState] = useState(generalData);
@@ -47,10 +40,7 @@ function General() {
         inputLabelText="Phone"
         changeFn={(event) => handlePhoneChange(event)}
       />
-      <div className="button-container">
-        <button>Edit</button>
-        <button>Submit</button>
-      </div>
+      <ButtonContainer />
     </div>
   );
 }
