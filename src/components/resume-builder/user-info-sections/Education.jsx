@@ -8,8 +8,6 @@ import ButtonContainer from "./ButtonContainer.jsx";
 function Education() {
   const [educationState, setEducationState] = useState(educationData);
 
-  console.log(educationState);
-
   const handleSchoolChange = (event) => {
     setEducationState({ ...educationState, school: event.target.value });
   };
