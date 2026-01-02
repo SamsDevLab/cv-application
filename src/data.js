@@ -4,13 +4,11 @@ export const generalData = {
   phone: "",
 };
 
-export const educationState = {
-  0: {
-    school: "U of L",
-    major: "English",
-    startDate: "11/2007",
-    endDate: "05/2011",
-  },
+export const educationData = {
+  school: "U of L",
+  major: "English",
+  from: "11/2007",
+  to: "05/2011",
 };
 
 export const experienceState = {
