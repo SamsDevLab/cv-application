@@ -16,8 +16,6 @@ function General() {
 
   const handleNameChange = (event) => {
     setGeneralState({ ...generalState, name: event.target.value });
-
-    console.log(generalState);
   };
 
   const handleEmailChange = (event) => {
@@ -37,22 +35,18 @@ function General() {
         inputLabelText="Name"
         changeFn={(event) => handleNameChange(event)}
       />
-      <div className="input-container">
-        <label htmlFor="email">Email: </label>
-        <input
-          type="email"
-          id="email"
-          onChange={(event) => handleEmailChange(event)}
-        />
-      </div>
-      <div className="input-container">
-        <label htmlFor="phone">Phone: </label>
-        <input
-          type="tel"
-          id="phone"
-          onChange={(event) => handlePhoneChange(event)}
-        />
-      </div>
+      <FormElement
+        inputType="email"
+        inputId="email"
+        inputLabelText="Email"
+        changeFn={(event) => handleEmailChange(event)}
+      />
+      <FormElement
+        inputType="text"
+        inputId="phone"
+        inputLabelText="Phone"
+        changeFn={(event) => handlePhoneChange(event)}
+      />
       <div className="button-container">
         <button>Edit</button>
         <button>Submit</button>
