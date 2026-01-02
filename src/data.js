@@ -12,11 +12,9 @@ export const educationData = {
 };
 
 export const experienceState = {
-  0: {
-    company: "CrowdStrike",
-    position: "Software Developer",
-    responsibilities: "Breaking stuff right before it ships end prod",
-    startDate: "11/2023",
-    endDate: "07/2024",
-  },
+  company: "CrowdStrike",
+  position: "Software Developer",
+  responsibilities: "Breaking stuff right before it ships end prod",
+  from: "11/2023",
+  to: "07/2024",
 };
