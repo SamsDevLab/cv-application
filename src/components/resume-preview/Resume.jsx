@@ -3,7 +3,7 @@ import "../../styles/Resume.css";
 function Resume() {
   return (
     <div className="resume">
-      <hr class="header-line" />
+      <hr className="header-line" />
       <header>
         <section className="general-info-container">
           <h1>Sam's Dev Lab</h1>
