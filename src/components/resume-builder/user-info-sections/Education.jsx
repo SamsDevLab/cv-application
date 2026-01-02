@@ -20,10 +20,7 @@ function Education() {
         changeFn
       />
       <DateRangeInput />
-      <div className="button-container">
-        <button>Edit</button>
-        <button>Submit</button>
-      </div>
+      <ButtonContainer />
     </div>
   );
 }
