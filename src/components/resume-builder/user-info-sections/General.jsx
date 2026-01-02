@@ -24,11 +24,11 @@ function General() {
       </div>
       <div className="input-container">
         <label htmlFor="email">Email: </label>
-        <input type="text" id="email" />
+        <input type="email" id="email" />
       </div>
       <div className="input-container">
         <label htmlFor="phone">Phone: </label>
-        <input type="text" id="phone" />
+        <input type="tel" id="phone" />
       </div>
       <div className="button-container">
         <button>Edit</button>
