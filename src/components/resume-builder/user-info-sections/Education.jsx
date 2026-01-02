@@ -25,8 +25,16 @@ function Education() {
         <input type="text" id="major" />
       </div>
       <div className="input-container">
-        <label htmlFor="years">Years: </label>
-        <input type="text" id="years" />
+        <div className="date-container">
+          <div className="from-container">
+            <label htmlFor="from">From: </label>
+            <input type="date" id="from" />
+          </div>
+          <div className="to-container">
+            <label htmlFor="to">To: </label>
+            <input type="date" id="to" />
+          </div>
+        </div>
       </div>
       <div className="button-container">
         <button>Edit</button>
