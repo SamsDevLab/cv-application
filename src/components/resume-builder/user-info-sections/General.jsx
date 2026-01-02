@@ -1,6 +1,7 @@
 import "../../../styles/SectionStyles.css";
 import { generalData } from "../../../data";
 import { useState } from "react";
+import FormElement from "./FormElement.jsx";
 
 /*
 Pseudocode: 
@@ -15,6 +16,8 @@ function General() {
 
   const handleNameChange = (event) => {
     setGeneralState({ ...generalState, name: event.target.value });
+
+    console.log(generalState);
   };
 
   const handleEmailChange = (event) => {
@@ -28,14 +31,12 @@ function General() {
   return (
     <div className="section-container">
       <h3>General Info</h3>
-      <div className="input-container">
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          onChange={(event) => handleNameChange(event)}
-        />
-      </div>
+      <FormElement
+        inputType="text"
+        inputId="name"
+        inputLabelText="Name"
+        changeFn={(event) => handleNameChange(event)}
+      />
       <div className="input-container">
         <label htmlFor="email">Email: </label>
         <input
