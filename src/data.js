@@ -13,7 +13,7 @@ export const educationData = {
 
 export const experienceData = {
   company: "CrowdStrike",
-  position: "Software Developer",
+  title: "Software Developer",
   responsibilities: "Breaking stuff right before it ships end prod",
   from: "11/2023",
   to: "07/2024",
