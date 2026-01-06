@@ -3,12 +3,9 @@ import { experienceData } from "../../../data";
 import { useState } from "react";
 import FormElement from "./FormElement";
 import DateRangeInput from "./DateRangeInput";
-import ButtonContainer from "./ButtonContainer";
 
 function Experience() {
   const [experienceState, setExperienceState] = useState(experienceData);
-
-  console.log(experienceState);
 
   const handleCompanyChange = (event) => {
     setExperienceState({ ...experienceState, company: event.target.value });
@@ -42,7 +39,6 @@ function Experience() {
         inputLabelText="Company"
         changeFn={(event) => handleCompanyChange(event)}
       />
-
       <FormElement
         inputType="text"
         inputId="title"
@@ -59,7 +55,6 @@ function Experience() {
         changeFromDateFn={(event) => handleFromDateChange(event)}
         changeToDateFn={(event) => handleToDateChange(event)}
       />
-      <ButtonContainer />
     </div>
   );
 }

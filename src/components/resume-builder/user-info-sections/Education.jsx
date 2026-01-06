@@ -3,7 +3,6 @@ import { educationData } from "../../../data.js";
 import { useState } from "react";
 import FormElement from "./FormElement.jsx";
 import DateRangeInput from "./DateRangeInput.jsx";
-import ButtonContainer from "./ButtonContainer.jsx";
 
 function Education() {
   const [educationState, setEducationState] = useState(educationData);
@@ -43,7 +42,6 @@ function Education() {
         changeFromDateFn={(event) => handleFromDateChange(event)}
         changeToDateFn={(event) => handleToDateChange(event)}
       />
-      <ButtonContainer />
     </div>
   );
 }
