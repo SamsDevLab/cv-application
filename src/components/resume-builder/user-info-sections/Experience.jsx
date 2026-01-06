@@ -8,6 +8,8 @@ import ButtonContainer from "./ButtonContainer";
 function Experience() {
   const [experienceState, setExperienceState] = useState(experienceData);
 
+  console.log(experienceState);
+
   const handleCompanyChange = (event) => {
     setExperienceState({ ...experienceState, company: event.target.value });
   };
