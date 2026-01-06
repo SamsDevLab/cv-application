@@ -1,4 +1,4 @@
-import { generalData } from "../../../../data";
+import { generalData } from "../../../data.js";
 
 /*
 Pseudo:

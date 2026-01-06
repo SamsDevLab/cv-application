@@ -2,7 +2,7 @@
 Pseudo:
 • 
 */
-import { generalData } from "../../../../data";
+import { generalData } from "../../../data.js";
 
 function EditButton() {
   const showEdit = () => {
