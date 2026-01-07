@@ -1,14 +1,18 @@
 import "../../../styles/SectionStyles.css";
 import { experienceData } from "../../../data";
 import { useState } from "react";
-import FormElement from "./FormElement";
-import DateRangeInput from "./DateRangeInput";
+import FormElement from "../elements-and-inputs/FormElement";
+import DateRangeInput from "../elements-and-inputs/DateRangeInput";
 
 function Experience() {
   const [experienceState, setExperienceState] = useState(experienceData);
 
   const handleCompanyChange = (event) => {
     setExperienceState({ ...experienceState, company: event.target.value });
+  };
+
+  const handleLocationChange = (event) => {
+    setExperienceState({ ...experienceState, location: event.target.value });
   };
 
   const handleTitleChange = (event) => {
@@ -38,6 +42,12 @@ function Experience() {
         inputId="company-name"
         inputLabelText="Company"
         changeFn={(event) => handleCompanyChange(event)}
+      />
+      <FormElement
+        inputType="text"
+        inputId="location"
+        inputLabelText="Location"
+        changeFn={(event) => handleLocationChange(event)}
       />
       <FormElement
         inputType="text"

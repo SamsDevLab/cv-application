@@ -1,14 +1,18 @@
 import "../../../styles/SectionStyles.css";
 import { educationData } from "../../../data.js";
 import { useState } from "react";
-import FormElement from "./FormElement.jsx";
-import DateRangeInput from "./DateRangeInput.jsx";
+import FormElement from "../elements-and-inputs/FormElement.jsx";
+import DateRangeInput from "../elements-and-inputs/DateRangeInput.jsx";
 
 function Education() {
   const [educationState, setEducationState] = useState(educationData);
 
   const handleSchoolChange = (event) => {
     setEducationState({ ...educationState, school: event.target.value });
+  };
+
+  const handleLocationChange = (event) => {
+    setEducationState({ ...educationState, location: event.target.value });
   };
 
   const handleMajorChange = (event) => {
@@ -31,6 +35,12 @@ function Education() {
         inputId="school-name"
         inputLabelText="School Name"
         changeFn={(event) => handleSchoolChange(event)}
+      />
+      <FormElement
+        inputType="text"
+        inputId="location"
+        inputLabelText="Location"
+        changeFn={(event) => handleLocationChange(event)}
       />
       <FormElement
         inputType="text"
