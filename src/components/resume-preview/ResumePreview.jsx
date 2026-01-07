@@ -1,7 +1,22 @@
 import "../../styles/ResumePreview.css";
+import { useState } from "react";
 import { allData } from "../../data";
+import GeneralPreview from "./section-previews/GeneralPreview";
+import EducationPreview from "./section-previews/EducationPreview.jsx";
+import ExperiencePreview from "./section-previews/ExperiencePreview.jsx";
 
 function ResumePreview() {
+  const [resumeDataState, setResumeData] = useState(allData);
+
+  /*
+  Start here tomorrow (01/07)
+
+  Figure out:
+  • How to re-render this using updated allData object.
+  • Look into making these containers into components so you can
+  simplify this markup
+  */
+
   const generalData = allData.generalData;
   const educationData = allData.educationData;
   const experienceData = allData.experienceData;
@@ -11,41 +26,35 @@ function ResumePreview() {
       <div className="resume">
         <hr className="header-line" />
         <header>
-          <section className="general-info-container">
-            <h1>{generalData.name}</h1>
-            <address>{generalData.email}</address>
-            <span>{generalData.phone}</span>
-          </section>
+          <GeneralPreview
+            name={generalData.name}
+            email={generalData.email}
+            phone={generalData.phone}
+          />
         </header>
         <hr />
         <main>
           <section className="education-container">
             <h2>Education</h2>
-            <div className="details-container">
-              <p>{educationData.school}</p>
-              <p>{educationData.location}</p>
-            </div>
-            <div className="details-container secondary">
-              <p>{educationData.major}</p>
-              <p>
-                {educationData.from} – {educationData.to}
-              </p>
-            </div>
+            <EducationPreview
+              school={educationData.school}
+              location={educationData.location}
+              major={educationData.major}
+              fromDate={educationData.from}
+              toDate={educationData.to}
+            />
           </section>
           <hr />
           <section className="experience-container">
             <h2>Experience</h2>
-            <div className="details-container">
-              <p>{experienceData.company}</p>
-              <p>{experienceData.location}</p>
-            </div>
-            <div className="details-container secondary">
-              <p>{experienceData.title}</p>
-              <p>
-                {experienceData.from} – {experienceData.to}
-              </p>
-            </div>
-            <p>{experienceData.responsibilities}</p>
+            <ExperiencePreview
+              company={experienceData.company}
+              location={experienceData.location}
+              title={experienceData.title}
+              fromDate={experienceData.from}
+              toDate={experienceData.to}
+              responsibilities={experienceData.responsibilities}
+            />
           </section>
         </main>
       </div>
