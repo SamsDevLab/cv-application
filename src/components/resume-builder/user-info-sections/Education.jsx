@@ -31,18 +31,27 @@ function Education({ changeFn }) {
           inputType="text"
           inputId="school"
           inputLabelText="School Name"
+          minLength={1}
+          maxLength={20}
+          placeholder="University of Louisville"
           changeFn={(event) => handleEducationFormDataState(event)}
         />
         <FormElement
           inputType="text"
           inputId="location"
           inputLabelText="Location"
+          minLength={1}
+          maxLength={20}
+          placeholder="Louisville, KY"
           changeFn={(event) => handleEducationFormDataState(event)}
         />
         <FormElement
           inputType="text"
           inputId="major"
           inputLabelText="Major"
+          minLength={1}
+          maxLength={30}
+          placeholder="BA - English Literature"
           changeFn={(event) => handleEducationFormDataState(event)}
         />
         <DateRangeInput
