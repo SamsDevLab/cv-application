@@ -1,22 +1,15 @@
 import "../../../styles/SectionStyles.css";
-import { generalData } from "../../../data";
 import { useState } from "react";
-import FormElement from "./FormElement.jsx";
-import ButtonContainer from "./ButtonContainer.jsx";
+import { generalData } from "../../../data";
+import FormElement from "../elements-and-inputs/FormElement.jsx";
 
-function General() {
-  const [generalState, setGeneralState] = useState(generalData);
+function General({ changeFn }) {
+  const [formDataState, setFormDataState] = useState(generalData);
 
-  const handleNameChange = (event) => {
-    setGeneralState({ ...generalState, name: event.target.value });
-  };
+  const handleFormDataState = (event) => {
+    const prop = event.target.id;
 
-  const handleEmailChange = (event) => {
-    setGeneralState({ ...generalState, email: event.target.value });
-  };
-
-  const handlePhoneChange = (event) => {
-    setGeneralState({ ...generalState, phone: event.target.value });
+    setFormDataState({ ...formDataState, [`${prop}`]: event.target.value });
   };
 
   return (
@@ -26,21 +19,25 @@ function General() {
         inputType="text"
         inputId="name"
         inputLabelText="Name"
-        changeFn={(event) => handleNameChange(event)}
+        changeFn={(event) => handleFormDataState(event)}
       />
       <FormElement
         inputType="email"
         inputId="email"
         inputLabelText="Email"
-        changeFn={(event) => handleEmailChange(event)}
+        changeFn={(event) => handleFormDataState(event)}
       />
       <FormElement
         inputType="text"
         inputId="phone"
         inputLabelText="Phone"
-        changeFn={(event) => handlePhoneChange(event)}
+        changeFn={(event) => handleFormDataState(event)}
       />
-      <ButtonContainer />
+      <div className="button-container">
+        <button type="submit" onClick={() => changeFn(formDataState)}>
+          Submit
+        </button>
+      </div>
     </div>
   );
 }
