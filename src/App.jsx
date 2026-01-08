@@ -11,10 +11,14 @@ function App() {
   const [educationState, setEducationState] = useState(educationData);
   const [experienceState, setExperienceState] = useState(experienceData);
 
+  const handleGeneralStateChange = (formData) => {
+    setGeneralState(formData);
+  };
+
   return (
     <>
       <main className="app">
-        <ResumeBuilder />
+        <ResumeBuilder generalStateChangeFn={handleGeneralStateChange} />
         <ResumePreview
           general={generalState}
           education={educationState}
