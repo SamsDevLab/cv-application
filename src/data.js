@@ -1,11 +1,11 @@
 export const generalData = {
-  name: "Sam'ss Dev Lab",
-  email: "samsdevlab@proton.me",
+  name: "Sam's Dev Lab",
+  email: "samsdevlab@randomemail.com",
   phone: "555-555-5555",
 };
 
 export const educationData = {
-  school: "U of L",
+  school: "University of Louisville",
   location: "Louisville, KY",
   major: "BA - English Literature",
   from: "08 / 2007",
@@ -13,8 +13,8 @@ export const educationData = {
 };
 
 export const experienceData = {
-  company: "CrowdStrike",
-  location: "Austin, TX",
+  company: "Random Co.",
+  location: "Nashville, TN",
   title: "Software Developer",
   from: "11 / 2023",
   to: "07 / 2024",
