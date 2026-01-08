@@ -1,70 +1,76 @@
 import "../../../styles/SectionStyles.css";
-import { experienceData } from "../../../data";
 import { useState } from "react";
+import { experienceData } from "../../../data";
 import FormElement from "../elements-and-inputs/FormElement";
 import DateRangeInput from "../elements-and-inputs/DateRangeInput";
 
-function Experience() {
-  const [experienceState, setExperienceState] = useState(experienceData);
+function Experience({ changeFn }) {
+  const [experienceFormDataState, setExperienceFormDataState] =
+    useState(experienceData);
 
-  const handleCompanyChange = (event) => {
-    setExperienceState({ ...experienceState, company: event.target.value });
-  };
+  const handleExperienceFormDataState = (event) => {
+    const prop = event.target.id;
 
-  const handleLocationChange = (event) => {
-    setExperienceState({ ...experienceState, location: event.target.value });
-  };
-
-  const handleTitleChange = (event) => {
-    setExperienceState({ ...experienceState, title: event.target.value });
-  };
-
-  const handleResponsibilitiesChange = (event) => {
-    setExperienceState({
-      ...experienceState,
-      responsibilities: event.target.value,
+    setExperienceFormDataState({
+      ...experienceFormDataState,
+      [`${prop}`]: event.target.value,
     });
   };
 
-  const handleFromDateChange = (event) => {
-    setExperienceState({ ...experienceState, from: event.target.value });
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleToDateChange = (event) => {
-    setExperienceState({ ...experienceState, to: event.target.value });
+    changeFn(experienceFormDataState);
   };
 
   return (
     <div className="section-container">
       <h2>Experience</h2>
-      <FormElement
-        inputType="text"
-        inputId="company-name"
-        inputLabelText="Company"
-        changeFn={(event) => handleCompanyChange(event)}
-      />
-      <FormElement
-        inputType="text"
-        inputId="location"
-        inputLabelText="Location"
-        changeFn={(event) => handleLocationChange(event)}
-      />
-      <FormElement
-        inputType="text"
-        inputId="title"
-        inputLabelText="Title"
-        changeFn={(event) => handleTitleChange(event)}
-      />
-      <FormElement
-        inputType="textarea"
-        inputId="responsibilites"
-        inputLabelText="Responsibilities"
-        changeFn={(event) => handleResponsibilitiesChange(event)}
-      />
-      <DateRangeInput
-        changeFromDateFn={(event) => handleFromDateChange(event)}
-        changeToDateFn={(event) => handleToDateChange(event)}
-      />
+      <form onSubmit={handleSubmit}>
+        <FormElement
+          inputType="text"
+          inputId="company"
+          inputLabelText="Company"
+          minLength={1}
+          maxLength={20}
+          placeholder="CrowdStrike"
+          changeFn={(event) => handleExperienceFormDataState(event)}
+        />
+        <FormElement
+          inputType="text"
+          inputId="location"
+          inputLabelText="Location"
+          minLength={1}
+          maxLength={20}
+          placeholder="Austin, TX"
+          changeFn={(event) => handleExperienceFormDataState(event)}
+        />
+        <FormElement
+          inputType="text"
+          inputId="title"
+          inputLabelText="Title"
+          minLength={1}
+          maxLength={20}
+          placeholder="Sales Development Representative"
+          changeFn={(event) => handleExperienceFormDataState(event)}
+        />
+        <FormElement
+          inputType="textarea"
+          inputId="responsibilities"
+          inputLabelText="Responsibilities"
+          minLength={1}
+          maxLength={20}
+          placeholder="• 60+ cold calls a day, generate business for sales reps"
+          changeFn={(event) => handleExperienceFormDataState(event)}
+        />
+        <DateRangeInput
+          changeFromDateFn={(event) => handleExperienceFormDataState(event)}
+          changeToDateFn={(event) => handleExperienceFormDataState(event)}
+        />
+        <div className="button-container">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   );
 }
