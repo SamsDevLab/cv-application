@@ -19,17 +19,22 @@ function App() {
     setEducationState(formData);
   };
 
+  const handleExperienceStateChange = (formData) => {
+    setExperienceState(formData);
+  };
+
   return (
     <>
       <main className="app">
         <ResumeBuilder
           generalStateChangeFn={handleGeneralStateChange}
           educationStateChangeFn={handleEducationStateChange}
+          experienceStateChangeFn={handleExperienceStateChange}
         />
         <ResumePreview
           general={generalState}
           education={educationState}
-          experience={experienceData}
+          experience={experienceState}
         />
       </main>
     </>
