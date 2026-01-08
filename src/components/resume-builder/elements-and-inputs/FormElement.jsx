@@ -11,7 +11,12 @@ function FormElement({
     <div className="input-container">
       <label htmlFor={inputId}>{inputLabelText}: </label>
       {inputType === "textarea" ? (
-        <textarea id={inputId} onChange={changeFn} required></textarea>
+        <textarea
+          id={inputId}
+          onChange={changeFn}
+          placeholder={placeholder}
+          required
+        ></textarea>
       ) : (
         <input
           type={inputType}
