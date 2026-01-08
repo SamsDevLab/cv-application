@@ -12,32 +12,47 @@ function General({ changeFn }) {
     setFormDataState({ ...formDataState, [`${prop}`]: event.target.value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    changeFn(formDataState);
+  };
+
   return (
     <div className="section-container">
       <h3>General Info</h3>
-      <FormElement
-        inputType="text"
-        inputId="name"
-        inputLabelText="Name"
-        changeFn={(event) => handleFormDataState(event)}
-      />
-      <FormElement
-        inputType="email"
-        inputId="email"
-        inputLabelText="Email"
-        changeFn={(event) => handleFormDataState(event)}
-      />
-      <FormElement
-        inputType="text"
-        inputId="phone"
-        inputLabelText="Phone"
-        changeFn={(event) => handleFormDataState(event)}
-      />
-      <div className="button-container">
-        <button type="submit" onClick={() => changeFn(formDataState)}>
-          Submit
-        </button>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <FormElement
+          inputType="text"
+          inputId="name"
+          inputLabelText="Name"
+          minLength={1}
+          maxLength={20}
+          placeholder="Sam"
+          changeFn={(event) => handleFormDataState(event)}
+        />
+        <FormElement
+          inputType="email"
+          inputId="email"
+          inputLabelText="Email"
+          minLength={3}
+          maxLength={30}
+          placeholder="sam@randomemail.com"
+          changeFn={(event) => handleFormDataState(event)}
+        />
+        <FormElement
+          inputType="tel"
+          inputId="phone"
+          inputLabelText="Phone"
+          minLength={12}
+          maxLength={12}
+          placeholder="555-555-5555"
+          changeFn={(event) => handleFormDataState(event)}
+        />
+        <div className="button-container">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
     </div>
   );
 }
