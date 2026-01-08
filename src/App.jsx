@@ -15,10 +15,17 @@ function App() {
     setGeneralState(formData);
   };
 
+  const handleEducationStateChange = (formData) => {
+    setEducationState(formData);
+  };
+
   return (
     <>
       <main className="app">
-        <ResumeBuilder generalStateChangeFn={handleGeneralStateChange} />
+        <ResumeBuilder
+          generalStateChangeFn={handleGeneralStateChange}
+          educationStateChangeFn={handleEducationStateChange}
+        />
         <ResumePreview
           general={generalState}
           education={educationState}
