@@ -12,8 +12,10 @@ function General({ changeFn }) {
     setFormDataState({ ...formDataState, [`${prop}`]: event.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    form.reset();
 
     changeFn(formDataState);
   };
@@ -21,6 +23,7 @@ function General({ changeFn }) {
   return (
     <div className="section-container">
       <h3>General Info</h3>
+
       <form onSubmit={handleSubmit}>
         <FormElement
           inputType="text"

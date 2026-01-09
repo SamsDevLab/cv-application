@@ -17,8 +17,10 @@ function Experience({ changeFn }) {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    form.reset();
 
     changeFn(experienceFormDataState);
   };

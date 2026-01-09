@@ -17,8 +17,10 @@ function Education({ changeFn }) {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    form.reset();
 
     changeFn(educationFormDataState);
   };
