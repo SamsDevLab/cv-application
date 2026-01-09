@@ -28,7 +28,6 @@ function General({ changeFn }) {
           inputLabelText="Name"
           minLength={1}
           maxLength={20}
-          placeholder="Sam"
           changeFn={(event) => handleFormDataState(event)}
         />
         <FormElement
@@ -37,7 +36,6 @@ function General({ changeFn }) {
           inputLabelText="Email"
           minLength={3}
           maxLength={30}
-          placeholder="sam@randomemail.com"
           changeFn={(event) => handleFormDataState(event)}
         />
         <FormElement
@@ -46,7 +44,6 @@ function General({ changeFn }) {
           inputLabelText="Phone"
           minLength={12}
           maxLength={12}
-          placeholder="555-555-5555"
           changeFn={(event) => handleFormDataState(event)}
         />
         <div className="button-container">

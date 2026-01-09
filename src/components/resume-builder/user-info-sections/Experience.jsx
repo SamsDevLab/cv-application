@@ -32,7 +32,7 @@ function Experience({ changeFn }) {
           inputId="company"
           inputLabelText="Company"
           minLength={1}
-          maxLength={20}
+          maxLength={40}
           placeholder="CrowdStrike"
           changeFn={(event) => handleExperienceFormDataState(event)}
         />
@@ -41,8 +41,7 @@ function Experience({ changeFn }) {
           inputId="location"
           inputLabelText="Location"
           minLength={1}
-          maxLength={20}
-          placeholder="Austin, TX"
+          maxLength={40}
           changeFn={(event) => handleExperienceFormDataState(event)}
         />
         <FormElement
@@ -50,8 +49,7 @@ function Experience({ changeFn }) {
           inputId="title"
           inputLabelText="Title"
           minLength={1}
-          maxLength={20}
-          placeholder="Sales Development Representative"
+          maxLength={40}
           changeFn={(event) => handleExperienceFormDataState(event)}
         />
         <FormElement
@@ -59,8 +57,6 @@ function Experience({ changeFn }) {
           inputId="responsibilities"
           inputLabelText="Responsibilities"
           minLength={1}
-          maxLength={20}
-          placeholder="• 60+ cold calls a day, generate business for sales reps"
           changeFn={(event) => handleExperienceFormDataState(event)}
         />
         <DateRangeInput

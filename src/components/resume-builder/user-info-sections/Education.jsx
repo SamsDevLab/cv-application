@@ -5,14 +5,14 @@ import FormElement from "../elements-and-inputs/FormElement.jsx";
 import DateRangeInput from "../elements-and-inputs/DateRangeInput.jsx";
 
 function Education({ changeFn }) {
-  const [educationformDataState, setEducationFormDataState] =
+  const [educationFormDataState, setEducationFormDataState] =
     useState(educationData);
 
   const handleEducationFormDataState = (event) => {
     const prop = event.target.id;
 
     setEducationFormDataState({
-      ...educationformDataState,
+      ...educationFormDataState,
       [`${prop}`]: event.target.value,
     });
   };
@@ -20,7 +20,7 @@ function Education({ changeFn }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    changeFn(educationformDataState);
+    changeFn(educationFormDataState);
   };
 
   return (
@@ -32,8 +32,7 @@ function Education({ changeFn }) {
           inputId="school"
           inputLabelText="School Name"
           minLength={1}
-          maxLength={20}
-          placeholder="University of Louisville"
+          maxLength={40}
           changeFn={(event) => handleEducationFormDataState(event)}
         />
         <FormElement
@@ -41,8 +40,7 @@ function Education({ changeFn }) {
           inputId="location"
           inputLabelText="Location"
           minLength={1}
-          maxLength={20}
-          placeholder="Louisville, KY"
+          maxLength={40}
           changeFn={(event) => handleEducationFormDataState(event)}
         />
         <FormElement
@@ -51,7 +49,6 @@ function Education({ changeFn }) {
           inputLabelText="Major"
           minLength={1}
           maxLength={30}
-          placeholder="BA - English Literature"
           changeFn={(event) => handleEducationFormDataState(event)}
         />
         <DateRangeInput
