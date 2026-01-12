@@ -14,15 +14,41 @@ function ResumeBuilder({
   return (
     <section className="resume-builder">
       <h2>SDL's Resume Builder</h2>
-      <General changeFn={generalStateChangeFn} currentGenState={generalState} />
-      <Education
-        changeFn={educationStateChangeFn}
-        currentEducationState={educationState}
-      />
-      <Experience
-        changeFn={experienceStateChangeFn}
-        currentExperienceState={experienceState}
-      />
+      <section className="component-container general">
+        <div className="component-header">
+          <h3>General Info</h3>
+        </div>
+        <General
+          changeFn={generalStateChangeFn}
+          currentGenState={generalState}
+        />
+      </section>
+      <section className="component-container education">
+        <div className="component-header">
+          <h3>Education</h3>
+          <div className="add-delete-container">
+            <button>Add</button>
+            <button>Delete</button>
+          </div>
+        </div>
+        <Education
+          changeFn={educationStateChangeFn}
+          currentEducationState={educationState}
+        />
+      </section>
+      <section className="component-container experience">
+        <div className="component-header">
+          <h3>Experience</h3>
+          <div className="add-delete-container">
+            <button>Add</button>
+            <button>Delete</button>
+          </div>
+        </div>
+        <Experience
+          changeFn={experienceStateChangeFn}
+          currentExperienceState={experienceState}
+        />
+      </section>
     </section>
   );
 }
