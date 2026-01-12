@@ -4,7 +4,7 @@ import { educationData } from "../../../data.js";
 import FormElement from "../elements-and-inputs/FormElement.jsx";
 import DateRangeInput from "../elements-and-inputs/DateRangeInput.jsx";
 
-function Education({ changeFn }) {
+function Education({ changeFn, currentEducationState }) {
   const [educationFormDataState, setEducationFormDataState] =
     useState(educationData);
 
@@ -19,10 +19,20 @@ function Education({ changeFn }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target;
-    form.reset();
 
     changeFn(educationFormDataState);
+
+    setEducationFormDataState({
+      school: "",
+      location: "",
+      major: "",
+      from: "",
+      to: "",
+    });
+  };
+
+  const editValues = () => {
+    setEducationFormDataState(currentEducationState);
   };
 
   return (
@@ -35,7 +45,8 @@ function Education({ changeFn }) {
           inputLabelText="School Name"
           minLength={1}
           maxLength={40}
-          changeFn={(event) => handleEducationFormDataState(event)}
+          editFn={(event) => handleEducationFormDataState(event)}
+          value={educationFormDataState.school}
         />
         <FormElement
           inputType="text"
@@ -43,7 +54,8 @@ function Education({ changeFn }) {
           inputLabelText="Location"
           minLength={1}
           maxLength={40}
-          changeFn={(event) => handleEducationFormDataState(event)}
+          editFn={(event) => handleEducationFormDataState(event)}
+          value={educationFormDataState.location}
         />
         <FormElement
           inputType="text"
@@ -51,13 +63,19 @@ function Education({ changeFn }) {
           inputLabelText="Major"
           minLength={1}
           maxLength={30}
-          changeFn={(event) => handleEducationFormDataState(event)}
+          editFn={(event) => handleEducationFormDataState(event)}
+          value={educationFormDataState.major}
         />
         <DateRangeInput
           changeFromDateFn={(event) => handleEducationFormDataState(event)}
           changeToDateFn={(event) => handleEducationFormDataState(event)}
+          from={educationFormDataState.from}
+          to={educationFormDataState.to}
         />
         <div className="button-container">
+          <button type="button" onClick={() => editValues()}>
+            Edit
+          </button>
           <button type="submit">Submit</button>
         </div>
       </form>
