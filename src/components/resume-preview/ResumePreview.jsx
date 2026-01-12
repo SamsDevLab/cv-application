@@ -10,7 +10,7 @@ function ResumePreview({ general, education, experience }) {
         <hr className="header-line" />
         <header>
           <GeneralPreview
-            name={general.name}
+            username={general.username}
             email={general.email}
             phone={general.phone}
           />
