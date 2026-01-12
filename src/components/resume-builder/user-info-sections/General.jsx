@@ -3,7 +3,7 @@ import { useState } from "react";
 import { generalData } from "../../../data";
 import FormElement from "../elements-and-inputs/FormElement.jsx";
 
-function General({ changeFn }) {
+function General({ changeFn, currentGenState }) {
   const [formDataState, setFormDataState] = useState(generalData);
 
   const handleFormDataState = (event) => {
@@ -14,24 +14,27 @@ function General({ changeFn }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target;
-    form.reset();
-
     changeFn(formDataState);
+
+    setFormDataState({ username: "", email: "", phone: "" });
+  };
+
+  const editValues = () => {
+    setFormDataState(currentGenState);
   };
 
   return (
     <div className="section-container">
       <h3>General Info</h3>
-
       <form onSubmit={handleSubmit}>
         <FormElement
           inputType="text"
-          inputId="name"
+          inputId="username"
           inputLabelText="Name"
           minLength={1}
           maxLength={20}
-          changeFn={(event) => handleFormDataState(event)}
+          editFn={(event) => handleFormDataState(event)}
+          value={formDataState.username}
         />
         <FormElement
           inputType="email"
@@ -39,7 +42,8 @@ function General({ changeFn }) {
           inputLabelText="Email"
           minLength={3}
           maxLength={30}
-          changeFn={(event) => handleFormDataState(event)}
+          editFn={(event) => handleFormDataState(event)}
+          value={formDataState.email}
         />
         <FormElement
           inputType="tel"
@@ -47,9 +51,13 @@ function General({ changeFn }) {
           inputLabelText="Phone"
           minLength={12}
           maxLength={12}
-          changeFn={(event) => handleFormDataState(event)}
+          editFn={(event) => handleFormDataState(event)}
+          value={formDataState.phone}
         />
         <div className="button-container">
+          <button type="button" onClick={() => editValues()}>
+            Edit
+          </button>
           <button type="submit">Submit</button>
         </div>
       </form>

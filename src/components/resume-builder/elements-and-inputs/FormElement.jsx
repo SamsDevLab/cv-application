@@ -4,20 +4,22 @@ function FormElement({
   inputLabelText,
   minLength,
   maxLength,
-  changeFn,
+  editFn,
+  value,
 }) {
   return (
     <div className="input-container">
       <label htmlFor={inputId}>{inputLabelText}: </label>
       {inputType === "textarea" ? (
-        <textarea id={inputId} onChange={changeFn} required></textarea>
+        <textarea id={inputId} required></textarea>
       ) : (
         <input
           type={inputType}
           id={inputId}
           minLength={minLength}
           maxLength={maxLength}
-          onChange={changeFn}
+          onChange={editFn}
+          value={value}
           required
         />
       )}
