@@ -1,5 +1,5 @@
 export const generalData = {
-  name: "Sam's Dev Lab",
+  username: "Sam's Dev Lab",
   email: "samsdevlab@randomemail.com",
   phone: "555-555-5555",
 };
