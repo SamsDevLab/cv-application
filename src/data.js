@@ -8,16 +8,16 @@ export const educationData = {
   school: "University of Louisville",
   location: "Louisville, KY",
   major: "BA - English Literature",
-  from: "2007-08-01",
-  to: "2011-05-31",
+  from: "Aug 2007",
+  to: "May 2011",
 };
 
 export const experienceData = {
   company: "Random Co.",
   location: "Nashville, TN",
   title: "Software Developer",
-  from: "2023-11-01",
-  to: "2024-07-01",
+  from: "Nov 2023",
+  to: "Jul 2024",
   responsibilities: "Breaking stuff right before it ships to prod",
 };
 
