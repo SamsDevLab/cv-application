@@ -30,6 +30,9 @@ function App() {
           generalStateChangeFn={handleGeneralStateChange}
           educationStateChangeFn={handleEducationStateChange}
           experienceStateChangeFn={handleExperienceStateChange}
+          generalState={generalState}
+          educationState={educationState}
+          experienceState={experienceState}
         />
         <ResumePreview
           general={generalState}
