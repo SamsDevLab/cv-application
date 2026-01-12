@@ -15,8 +15,14 @@ function ResumeBuilder({
     <section className="resume-builder">
       <h2>SDL's Resume Builder</h2>
       <General changeFn={generalStateChangeFn} currentGenState={generalState} />
-      <Education changeFn={educationStateChangeFn} state={educationState} />
-      <Experience changeFn={experienceStateChangeFn} state={experienceState} />
+      <Education
+        changeFn={educationStateChangeFn}
+        currentEducationState={educationState}
+      />
+      <Experience
+        changeFn={experienceStateChangeFn}
+        currentExperienceState={experienceState}
+      />
     </section>
   );
 }
