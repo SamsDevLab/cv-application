@@ -24,44 +24,41 @@ function General({ changeFn, currentGenState }) {
   };
 
   return (
-    <div className="section-container">
-      <h3>General Info</h3>
-      <form onSubmit={handleSubmit}>
-        <FormElement
-          inputType="text"
-          inputId="username"
-          inputLabelText="Name"
-          minLength={1}
-          maxLength={20}
-          editFn={(event) => handleFormDataState(event)}
-          value={formDataState.username}
-        />
-        <FormElement
-          inputType="email"
-          inputId="email"
-          inputLabelText="Email"
-          minLength={3}
-          maxLength={30}
-          editFn={(event) => handleFormDataState(event)}
-          value={formDataState.email}
-        />
-        <FormElement
-          inputType="tel"
-          inputId="phone"
-          inputLabelText="Phone"
-          minLength={12}
-          maxLength={12}
-          editFn={(event) => handleFormDataState(event)}
-          value={formDataState.phone}
-        />
-        <div className="button-container">
-          <button type="button" onClick={() => editValues()}>
-            Edit
-          </button>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <FormElement
+        inputType="text"
+        inputId="username"
+        inputLabelText="Name"
+        minLength={1}
+        maxLength={20}
+        editFn={(event) => handleFormDataState(event)}
+        value={formDataState.username}
+      />
+      <FormElement
+        inputType="email"
+        inputId="email"
+        inputLabelText="Email"
+        minLength={3}
+        maxLength={30}
+        editFn={(event) => handleFormDataState(event)}
+        value={formDataState.email}
+      />
+      <FormElement
+        inputType="tel"
+        inputId="phone"
+        inputLabelText="Phone"
+        minLength={12}
+        maxLength={12}
+        editFn={(event) => handleFormDataState(event)}
+        value={formDataState.phone}
+      />
+      <div className="button-container">
+        <button type="button" onClick={() => editValues()}>
+          Edit
+        </button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   );
 }
 

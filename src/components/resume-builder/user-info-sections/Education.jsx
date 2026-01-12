@@ -36,50 +36,47 @@ function Education({ changeFn, currentEducationState }) {
   };
 
   return (
-    <div className="section-container">
-      <h3>Education</h3>
-      <form onSubmit={handleSubmit}>
-        <FormElement
-          inputType="text"
-          inputId="school"
-          inputLabelText="School Name"
-          minLength={1}
-          maxLength={40}
-          editFn={(event) => handleEducationFormDataState(event)}
-          value={educationFormDataState.school}
-        />
-        <FormElement
-          inputType="text"
-          inputId="location"
-          inputLabelText="Location"
-          minLength={1}
-          maxLength={40}
-          editFn={(event) => handleEducationFormDataState(event)}
-          value={educationFormDataState.location}
-        />
-        <FormElement
-          inputType="text"
-          inputId="major"
-          inputLabelText="Major"
-          minLength={1}
-          maxLength={30}
-          editFn={(event) => handleEducationFormDataState(event)}
-          value={educationFormDataState.major}
-        />
-        <DateRangeInput
-          changeFromDateFn={(event) => handleEducationFormDataState(event)}
-          changeToDateFn={(event) => handleEducationFormDataState(event)}
-          from={educationFormDataState.from}
-          to={educationFormDataState.to}
-        />
-        <div className="button-container">
-          <button type="button" onClick={() => editValues()}>
-            Edit
-          </button>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <FormElement
+        inputType="text"
+        inputId="school"
+        inputLabelText="School Name"
+        minLength={1}
+        maxLength={40}
+        editFn={(event) => handleEducationFormDataState(event)}
+        value={educationFormDataState.school}
+      />
+      <FormElement
+        inputType="text"
+        inputId="location"
+        inputLabelText="Location"
+        minLength={1}
+        maxLength={40}
+        editFn={(event) => handleEducationFormDataState(event)}
+        value={educationFormDataState.location}
+      />
+      <FormElement
+        inputType="text"
+        inputId="major"
+        inputLabelText="Major"
+        minLength={1}
+        maxLength={30}
+        editFn={(event) => handleEducationFormDataState(event)}
+        value={educationFormDataState.major}
+      />
+      <DateRangeInput
+        changeFromDateFn={(event) => handleEducationFormDataState(event)}
+        changeToDateFn={(event) => handleEducationFormDataState(event)}
+        from={educationFormDataState.from}
+        to={educationFormDataState.to}
+      />
+      <div className="button-container">
+        <button type="button" onClick={() => editValues()}>
+          Edit
+        </button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   );
 }
 

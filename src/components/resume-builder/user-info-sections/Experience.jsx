@@ -36,59 +36,56 @@ function Experience({ changeFn, currentExperienceState }) {
   };
 
   return (
-    <div className="section-container">
-      <h2>Experience</h2>
-      <form onSubmit={handleSubmit}>
-        <FormElement
-          inputType="text"
-          inputId="company"
-          inputLabelText="Company"
-          minLength={1}
-          maxLength={40}
-          placeholder="CrowdStrike"
-          editFn={(event) => handleExperienceFormDataState(event)}
-          value={experienceFormDataState.company}
-        />
-        <FormElement
-          inputType="text"
-          inputId="location"
-          inputLabelText="Location"
-          minLength={1}
-          maxLength={40}
-          editFn={(event) => handleExperienceFormDataState(event)}
-          value={experienceFormDataState.location}
-        />
-        <FormElement
-          inputType="text"
-          inputId="title"
-          inputLabelText="Title"
-          minLength={1}
-          maxLength={40}
-          editFn={(event) => handleExperienceFormDataState(event)}
-          value={experienceFormDataState.title}
-        />
-        <FormElement
-          inputType="textarea"
-          inputId="responsibilities"
-          inputLabelText="Responsibilities"
-          minLength={1}
-          editFn={(event) => handleExperienceFormDataState(event)}
-          value={experienceFormDataState.responsibilities}
-        />
-        <DateRangeInput
-          changeFromDateFn={(event) => handleExperienceFormDataState(event)}
-          changeToDateFn={(event) => handleExperienceFormDataState(event)}
-          from={experienceFormDataState.from}
-          to={experienceFormDataState.to}
-        />
-        <div className="button-container">
-          <button type="button" onClick={() => editValues()}>
-            Edit
-          </button>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <FormElement
+        inputType="text"
+        inputId="company"
+        inputLabelText="Company"
+        minLength={1}
+        maxLength={40}
+        placeholder="CrowdStrike"
+        editFn={(event) => handleExperienceFormDataState(event)}
+        value={experienceFormDataState.company}
+      />
+      <FormElement
+        inputType="text"
+        inputId="location"
+        inputLabelText="Location"
+        minLength={1}
+        maxLength={40}
+        editFn={(event) => handleExperienceFormDataState(event)}
+        value={experienceFormDataState.location}
+      />
+      <FormElement
+        inputType="text"
+        inputId="title"
+        inputLabelText="Title"
+        minLength={1}
+        maxLength={40}
+        editFn={(event) => handleExperienceFormDataState(event)}
+        value={experienceFormDataState.title}
+      />
+      <FormElement
+        inputType="textarea"
+        inputId="responsibilities"
+        inputLabelText="Responsibilities"
+        minLength={1}
+        editFn={(event) => handleExperienceFormDataState(event)}
+        value={experienceFormDataState.responsibilities}
+      />
+      <DateRangeInput
+        changeFromDateFn={(event) => handleExperienceFormDataState(event)}
+        changeToDateFn={(event) => handleExperienceFormDataState(event)}
+        from={experienceFormDataState.from}
+        to={experienceFormDataState.to}
+      />
+      <div className="button-container">
+        <button type="button" onClick={() => editValues()}>
+          Edit
+        </button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
   );
 }
 
