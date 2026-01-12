@@ -4,7 +4,7 @@ import { experienceData } from "../../../data";
 import FormElement from "../elements-and-inputs/FormElement";
 import DateRangeInput from "../elements-and-inputs/DateRangeInput";
 
-function Experience({ changeFn }) {
+function Experience({ changeFn, currentExperienceState }) {
   const [experienceFormDataState, setExperienceFormDataState] =
     useState(experienceData);
 
@@ -19,10 +19,20 @@ function Experience({ changeFn }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target;
-    form.reset();
 
     changeFn(experienceFormDataState);
+    setExperienceFormDataState({
+      company: "",
+      location: "",
+      title: "",
+      responsibilities: "",
+      from: "",
+      to: "",
+    });
+  };
+
+  const editValues = () => {
+    setExperienceFormDataState(currentExperienceState);
   };
 
   return (
@@ -36,7 +46,8 @@ function Experience({ changeFn }) {
           minLength={1}
           maxLength={40}
           placeholder="CrowdStrike"
-          changeFn={(event) => handleExperienceFormDataState(event)}
+          editFn={(event) => handleExperienceFormDataState(event)}
+          value={experienceFormDataState.company}
         />
         <FormElement
           inputType="text"
@@ -44,7 +55,8 @@ function Experience({ changeFn }) {
           inputLabelText="Location"
           minLength={1}
           maxLength={40}
-          changeFn={(event) => handleExperienceFormDataState(event)}
+          editFn={(event) => handleExperienceFormDataState(event)}
+          value={experienceFormDataState.location}
         />
         <FormElement
           inputType="text"
@@ -52,20 +64,27 @@ function Experience({ changeFn }) {
           inputLabelText="Title"
           minLength={1}
           maxLength={40}
-          changeFn={(event) => handleExperienceFormDataState(event)}
+          editFn={(event) => handleExperienceFormDataState(event)}
+          value={experienceFormDataState.title}
         />
         <FormElement
           inputType="textarea"
           inputId="responsibilities"
           inputLabelText="Responsibilities"
           minLength={1}
-          changeFn={(event) => handleExperienceFormDataState(event)}
+          editFn={(event) => handleExperienceFormDataState(event)}
+          value={experienceFormDataState.responsibilities}
         />
         <DateRangeInput
           changeFromDateFn={(event) => handleExperienceFormDataState(event)}
           changeToDateFn={(event) => handleExperienceFormDataState(event)}
+          from={experienceFormDataState.from}
+          to={experienceFormDataState.to}
         />
         <div className="button-container">
+          <button type="button" onClick={() => editValues()}>
+            Edit
+          </button>
           <button type="submit">Submit</button>
         </div>
       </form>
