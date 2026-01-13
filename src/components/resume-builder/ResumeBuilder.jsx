@@ -11,6 +11,21 @@ function ResumeBuilder({
   educationState,
   experienceState,
 }) {
+  console.log(educationState);
+
+  const addEducationComponent = () => {
+    const newEducationComponent = {
+      id: crypto.randomUUID(),
+      school: "",
+      location: "",
+      major: "",
+      from: "",
+      to: "",
+    };
+
+    educationStateChangeFn([...educationState, newEducationComponent]);
+  };
+
   return (
     <section className="resume-builder">
       <h2>SDL's Resume Builder</h2>
@@ -27,13 +42,25 @@ function ResumeBuilder({
         <div className="component-header">
           <h3>Education</h3>
           <div>
-            <button className="add-button">Add</button>
+            <button
+              className="add-button"
+              onClick={() => addEducationComponent()}
+            >
+              Add
+            </button>
           </div>
         </div>
-        <Education
+        {educationState.map((obj) => (
+          <Education
+            key={obj.id}
+            changeFn={educationStateChangeFn}
+            educationDataObj={obj}
+          />
+        ))}
+        {/* <Education
           changeFn={educationStateChangeFn}
           currentEducationState={educationState}
-        />
+        /> */}
       </section>
       <section className="component-container experience">
         <div className="component-header">
