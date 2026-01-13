@@ -26,9 +26,8 @@ function ResumeBuilder({
       <section className="component-container education">
         <div className="component-header">
           <h3>Education</h3>
-          <div className="add-delete-container">
-            <button>Add</button>
-            <button>Delete</button>
+          <div>
+            <button className="add-button">Add</button>
           </div>
         </div>
         <Education
@@ -39,9 +38,8 @@ function ResumeBuilder({
       <section className="component-container experience">
         <div className="component-header">
           <h3>Experience</h3>
-          <div className="add-delete-container">
-            <button>Add</button>
-            <button>Delete</button>
+          <div>
+            <button className="add-button">Add</button>
           </div>
         </div>
         <Experience
