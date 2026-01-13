@@ -4,15 +4,36 @@ export const generalData = {
   phone: "555-555-5555",
 };
 
-export const educationData = {
-  school: "University of Louisville",
-  location: "Louisville, KY",
-  major: "BA - English Literature",
-  from: "Aug 2007",
-  to: "May 2011",
-};
+// Start here tomorrow - trying to figure out how to map this new version within the Resume Preview
+// If there is an array of objects, each object needs to print in the Resume Preview and also appear
+// in the ResumeBuilder
+
+// Second Draft:
+// export const educationData = [
+//   {
+//     id: 0,
+//     school: "University of Louisville",
+//     location: "Louisville, KY",
+//     major: "BA - English Literature",
+//     from: "Aug 2007",
+//     to: "May 2011",
+//   },
+// ];
+
+// First Draft:
+export const educationData = [
+  {
+    id: crypto.randomUUID(),
+    school: "University of Louisville",
+    location: "Louisville, KY",
+    major: "BA - English Literature",
+    from: "Aug 2007",
+    to: "May 2011",
+  },
+];
 
 export const experienceData = {
+  id: crypto.randomUUID(),
   company: "Random Co.",
   location: "Nashville, TN",
   title: "Software Developer",
