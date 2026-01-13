@@ -4,6 +4,8 @@ import EducationPreview from "./section-previews/EducationPreview.jsx";
 import ExperiencePreview from "./section-previews/ExperiencePreview.jsx";
 
 function ResumePreview({ general, education, experience }) {
+  // console.log(education);
+
   return (
     <section className="resume-preview">
       <div className="resume">
@@ -19,13 +21,16 @@ function ResumePreview({ general, education, experience }) {
         <main>
           <section className="education-container">
             <h2>Education</h2>
-            <EducationPreview
-              school={education.school}
-              location={education.location}
-              major={education.major}
-              fromDate={education.from}
-              toDate={education.to}
-            />
+            {education.map((obj) => (
+              <EducationPreview
+                key={obj.id}
+                school={obj.school}
+                location={obj.location}
+                major={obj.major}
+                fromDate={obj.from}
+                toDate={obj.to}
+              />
+            ))}
           </section>
           <hr />
           <section className="experience-container">
