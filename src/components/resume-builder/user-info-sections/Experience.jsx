@@ -80,10 +80,14 @@ function Experience({ changeFn, currentExperienceState }) {
         to={experienceFormDataState.to}
       />
       <div className="button-container">
+        {" "}
+        <button type="submit">Submit</button>
         <button type="button" onClick={() => editValues()}>
           Edit
         </button>
-        <button type="submit">Submit</button>
+        <button className="delete-button" type="button">
+          Delete
+        </button>
       </div>
     </form>
   );

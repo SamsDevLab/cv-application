@@ -37,15 +37,17 @@ function Education({ changeFn, currentEducationState }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <FormElement
-        inputType="text"
-        inputId="school"
-        inputLabelText="School Name"
-        minLength={1}
-        maxLength={40}
-        editFn={(event) => handleEducationFormDataState(event)}
-        value={educationFormDataState.school}
-      />
+      <div>
+        <FormElement
+          inputType="text"
+          inputId="school"
+          inputLabelText="School Name"
+          minLength={1}
+          maxLength={40}
+          editFn={(event) => handleEducationFormDataState(event)}
+          value={educationFormDataState.school}
+        />
+      </div>
       <FormElement
         inputType="text"
         inputId="location"
@@ -71,10 +73,13 @@ function Education({ changeFn, currentEducationState }) {
         to={educationFormDataState.to}
       />
       <div className="button-container">
+        <button type="submit">Submit</button>
         <button type="button" onClick={() => editValues()}>
           Edit
         </button>
-        <button type="submit">Submit</button>
+        <button className="delete-button" type="button">
+          Delete
+        </button>
       </div>
     </form>
   );

@@ -52,11 +52,11 @@ function General({ changeFn, currentGenState }) {
         editFn={(event) => handleFormDataState(event)}
         value={formDataState.phone}
       />
-      <div className="button-container">
+      <div className="gen-button-container">
+        <button type="submit">Submit</button>
         <button type="button" onClick={() => editValues()}>
           Edit
         </button>
-        <button type="submit">Submit</button>
       </div>
     </form>
   );
