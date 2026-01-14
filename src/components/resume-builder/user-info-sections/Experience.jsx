@@ -16,20 +16,35 @@ function Experience({ experienceDataObj, submitFn }) {
     });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    submitFn(experienceFormDataState);
+
+    setExperienceFormDataState({
+      company: "",
+      location: "",
+      title: "",
+      from: "",
+      to: "",
+      responsibilities: "",
+    });
+  };
+
   const editValues = () => {
-    setExperienceFormDataState(experienceFormDataState);
+    setExperienceFormDataState(experienceDataObj);
   };
 
   return (
-    <form onSubmit={(event) => submitFn(event, experienceFormDataState)}>
+    <form onSubmit={handleSubmit}>
       <FormElement
         inputType="text"
         inputId="company"
         inputLabelText="Company"
         minLength={1}
         maxLength={40}
-        placeholder="CrowdStrike"
         editFn={(event) => handleExperienceFormDataState(event)}
+        placeholder={experienceDataObj.company}
         value={experienceFormDataState.company}
       />
       <FormElement
@@ -39,6 +54,7 @@ function Experience({ experienceDataObj, submitFn }) {
         minLength={1}
         maxLength={40}
         editFn={(event) => handleExperienceFormDataState(event)}
+        placeholder={experienceDataObj.location}
         value={experienceFormDataState.location}
       />
       <FormElement
@@ -48,6 +64,7 @@ function Experience({ experienceDataObj, submitFn }) {
         minLength={1}
         maxLength={40}
         editFn={(event) => handleExperienceFormDataState(event)}
+        placeholder={experienceDataObj.title}
         value={experienceFormDataState.title}
       />
       <FormElement
@@ -56,13 +73,16 @@ function Experience({ experienceDataObj, submitFn }) {
         inputLabelText="Responsibilities"
         minLength={1}
         editFn={(event) => handleExperienceFormDataState(event)}
+        placeholder={experienceDataObj.responsibilities}
         value={experienceFormDataState.responsibilities}
       />
       <DateRangeInput
         changeFromDateFn={(event) => handleExperienceFormDataState(event)}
         changeToDateFn={(event) => handleExperienceFormDataState(event)}
         from={experienceFormDataState.from}
+        fromPlaceholder={experienceDataObj.from}
         to={experienceFormDataState.to}
+        toPlaceholder={experienceDataObj.to}
       />
       <div className="button-container">
         {" "}

@@ -47,10 +47,6 @@ function App() {
     setEducationState(updatedArr);
   };
 
-  // const handleExperienceStateChange = (formData) => {
-  //   setExperienceState(formData);
-  // };
-
   const addExperienceComponent = () => {
     const newExperienceComponent = {
       id: crypto.randomUUID(),
@@ -65,9 +61,7 @@ function App() {
     setExperienceState([...experienceState, newExperienceComponent]);
   };
 
-  const handleExperienceSubmitForm = (event, formData) => {
-    event.preventDefault();
-
+  const handleExperienceSubmitForm = (formData) => {
     const updatedArr = experienceState.map((object) => {
       if (object.id === formData.id) {
         return {
