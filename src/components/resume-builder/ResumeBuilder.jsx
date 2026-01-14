@@ -1,31 +1,19 @@
 import "../../styles/ResumeBuilder.css";
+import { useState } from "react";
 import General from "./user-info-sections/General";
 import Education from "./user-info-sections/Education.jsx";
 import Experience from "./user-info-sections/Experience";
 
 function ResumeBuilder({
   generalStateChangeFn,
-  educationStateChangeFn,
   experienceStateChangeFn,
   generalState,
   educationState,
   experienceState,
+  addEducation,
+  educationSubmitFn,
 }) {
-  console.log(educationState);
-
-  const addEducationComponent = () => {
-    const newEducationComponent = {
-      id: crypto.randomUUID(),
-      school: "",
-      location: "",
-      major: "",
-      from: "",
-      to: "",
-    };
-
-    educationStateChangeFn([...educationState, newEducationComponent]);
-  };
-
+  // console.log(typeof educationState);
   return (
     <section className="resume-builder">
       <h2>SDL's Resume Builder</h2>
@@ -42,10 +30,7 @@ function ResumeBuilder({
         <div className="component-header">
           <h3>Education</h3>
           <div>
-            <button
-              className="add-button"
-              onClick={() => addEducationComponent()}
-            >
+            <button className="add-button" onClick={() => addEducation()}>
               Add
             </button>
           </div>
@@ -53,14 +38,10 @@ function ResumeBuilder({
         {educationState.map((obj) => (
           <Education
             key={obj.id}
-            changeFn={educationStateChangeFn}
             educationDataObj={obj}
+            submitFn={educationSubmitFn}
           />
         ))}
-        {/* <Education
-          changeFn={educationStateChangeFn}
-          currentEducationState={educationState}
-        /> */}
       </section>
       <section className="component-container experience">
         <div className="component-header">
