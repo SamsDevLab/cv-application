@@ -1,15 +1,15 @@
 export const generalData = {
-  username: "Sam's Dev Lab",
-  email: "samsdevlab@randomemail.com",
+  username: "Name",
+  email: "yourname@email.com",
   phone: "555-555-5555",
 };
 
 export const educationData = [
   {
     id: crypto.randomUUID(),
-    school: "University of Louisville",
-    location: "Louisville, KY",
-    major: "BA - English Literature",
+    school: "Some University",
+    location: "Somewhere, USA",
+    major: "BS - Computer Science",
     from: "Aug 2007",
     to: "May 2011",
   },
