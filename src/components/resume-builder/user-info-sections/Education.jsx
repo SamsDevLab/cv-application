@@ -1,12 +1,13 @@
 import "../../../styles/SectionStyles.css";
 import { useState } from "react";
-import { educationData } from "../../../data.js";
 import FormElement from "../elements-and-inputs/FormElement.jsx";
 import DateRangeInput from "../elements-and-inputs/DateRangeInput.jsx";
 
-function Education({ changeFn, currentEducationState }) {
+function Education({ educationDataObj, submitFn }) {
   const [educationFormDataState, setEducationFormDataState] =
-    useState(educationData);
+    useState(educationDataObj);
+
+  // console.log(educationFormDataState);
 
   const handleEducationFormDataState = (event) => {
     const prop = event.target.id;
@@ -17,26 +18,12 @@ function Education({ changeFn, currentEducationState }) {
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    changeFn(educationFormDataState);
-
-    setEducationFormDataState({
-      school: "",
-      location: "",
-      major: "",
-      from: "",
-      to: "",
-    });
-  };
-
   const editValues = () => {
-    setEducationFormDataState(currentEducationState);
+    setEducationFormDataState(educationFormDataState);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(event) => submitFn(event, educationFormDataState)}>
       <div>
         <FormElement
           inputType="text"
