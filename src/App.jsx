@@ -11,12 +11,44 @@ function App() {
   const [educationState, setEducationState] = useState(educationData);
   const [experienceState, setExperienceState] = useState(experienceData);
 
+  console.log(educationState);
+
   const handleGeneralStateChange = (formData) => {
     setGeneralState(formData);
   };
 
-  const handleEducationStateChange = (formData) => {
-    setEducationState(formData);
+  const addEducationComponent = () => {
+    const newEducationComponent = {
+      id: crypto.randomUUID(),
+      school: "",
+      location: "",
+      major: "",
+      from: "",
+      to: "",
+    };
+
+    setEducationState([...educationState, newEducationComponent]);
+  };
+
+  const handleEducationSubmitForm = (event, formData) => {
+    event.preventDefault();
+
+    const updatedArr = educationState.map((object) => {
+      if (object.id === formData.id) {
+        return {
+          ...object,
+          school: formData.school,
+          location: formData.location,
+          major: formData.major,
+          from: formData.from,
+          to: formData.to,
+        };
+      }
+
+      return object;
+    });
+
+    setEducationState(updatedArr);
   };
 
   const handleExperienceStateChange = (formData) => {
@@ -28,11 +60,12 @@ function App() {
       <main className="app">
         <ResumeBuilder
           generalStateChangeFn={handleGeneralStateChange}
-          educationStateChangeFn={handleEducationStateChange}
           experienceStateChangeFn={handleExperienceStateChange}
           generalState={generalState}
           educationState={educationState}
           experienceState={experienceState}
+          addEducation={addEducationComponent}
+          educationSubmitFn={handleEducationSubmitForm}
         />
         <ResumePreview
           general={generalState}
