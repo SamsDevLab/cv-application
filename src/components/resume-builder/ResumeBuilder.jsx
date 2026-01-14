@@ -1,19 +1,20 @@
 import "../../styles/ResumeBuilder.css";
-import { useState } from "react";
 import General from "./user-info-sections/General";
 import Education from "./user-info-sections/Education.jsx";
-import Experience from "./user-info-sections/Experience";
+import Experience from "./user-info-sections/Experience.jsx";
 
 function ResumeBuilder({
-  generalStateChangeFn,
-  experienceStateChangeFn,
   generalState,
+  generalStateChangeFn,
   educationState,
-  experienceState,
   addEducation,
   educationSubmitFn,
+  experienceState,
+  addExperience,
+  experienceSubmitFn,
 }) {
-  // console.log(typeof educationState);
+  // console.log(educationState);
+  // console.log(experienceState);
   return (
     <section className="resume-builder">
       <h2>SDL's Resume Builder</h2>
@@ -47,13 +48,18 @@ function ResumeBuilder({
         <div className="component-header">
           <h3>Experience</h3>
           <div>
-            <button className="add-button">Add</button>
+            <button className="add-button" onClick={() => addExperience()}>
+              Add
+            </button>
           </div>
         </div>
-        <Experience
-          changeFn={experienceStateChangeFn}
-          currentExperienceState={experienceState}
-        />
+        {experienceState.map((obj) => (
+          <Experience
+            key={obj.id}
+            experienceDataObj={obj}
+            submitFn={experienceSubmitFn}
+          />
+        ))}
       </section>
     </section>
   );
