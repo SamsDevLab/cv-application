@@ -1,10 +1,9 @@
 import "../../../styles/SectionStyles.css";
 import { useState } from "react";
-import { generalData } from "../../../data";
 import FormElement from "../elements-and-inputs/FormElement.jsx";
 
-function General({ changeFn, currentGenState }) {
-  const [formDataState, setFormDataState] = useState(generalData);
+function General({ submitFn, currentGeneralState }) {
+  const [formDataState, setFormDataState] = useState(currentGeneralState);
 
   const handleFormDataState = (event) => {
     const prop = event.target.id;
@@ -14,13 +13,13 @@ function General({ changeFn, currentGenState }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    changeFn(formDataState);
+    submitFn(formDataState);
 
     setFormDataState({ username: "", email: "", phone: "" });
   };
 
-  const editValues = () => {
-    setFormDataState(currentGenState);
+  const editFormValues = () => {
+    setFormDataState(currentGeneralState);
   };
 
   return (
@@ -32,6 +31,7 @@ function General({ changeFn, currentGenState }) {
         minLength={1}
         maxLength={20}
         editFn={(event) => handleFormDataState(event)}
+        placeholder={currentGeneralState.username}
         value={formDataState.username}
       />
       <FormElement
@@ -41,6 +41,7 @@ function General({ changeFn, currentGenState }) {
         minLength={3}
         maxLength={30}
         editFn={(event) => handleFormDataState(event)}
+        placeholder={currentGeneralState.email}
         value={formDataState.email}
       />
       <FormElement
@@ -50,11 +51,12 @@ function General({ changeFn, currentGenState }) {
         minLength={12}
         maxLength={12}
         editFn={(event) => handleFormDataState(event)}
+        placeholder={currentGeneralState.phone}
         value={formDataState.phone}
       />
       <div className="gen-button-container">
         <button type="submit">Submit</button>
-        <button type="button" onClick={() => editValues()}>
+        <button type="button" onClick={() => editFormValues()}>
           Edit
         </button>
       </div>

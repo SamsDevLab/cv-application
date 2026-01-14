@@ -5,6 +5,7 @@ function FormElement({
   minLength,
   maxLength,
   editFn,
+  placeholder,
   value,
 }) {
   return (
@@ -14,6 +15,7 @@ function FormElement({
         <textarea
           id={inputId}
           onChange={editFn}
+          placeholder={placeholder}
           value={value}
           required
         ></textarea>
@@ -24,6 +26,7 @@ function FormElement({
           minLength={minLength}
           maxLength={maxLength}
           onChange={editFn}
+          placeholder={placeholder}
           value={value}
           required
         />

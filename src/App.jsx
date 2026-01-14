@@ -11,10 +11,7 @@ function App() {
   const [educationState, setEducationState] = useState(educationData);
   const [experienceState, setExperienceState] = useState(experienceData);
 
-  // console.log(experienceState);
-  // console.log(educationState);
-
-  const handleGeneralStateChange = (formData) => {
+  const handleGeneralStateSubmitForm = (formData) => {
     setGeneralState(formData);
   };
 
@@ -97,7 +94,7 @@ function App() {
       <main className="app">
         <ResumeBuilder
           generalState={generalState}
-          generalStateChangeFn={handleGeneralStateChange}
+          generalSubmitFn={handleGeneralStateSubmitForm}
           educationState={educationState}
           addEducation={addEducationComponent}
           educationSubmitFn={handleEducationSubmitForm}

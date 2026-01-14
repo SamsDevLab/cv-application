@@ -5,7 +5,7 @@ import Experience from "./user-info-sections/Experience.jsx";
 
 function ResumeBuilder({
   generalState,
-  generalStateChangeFn,
+  generalSubmitFn,
   educationState,
   addEducation,
   educationSubmitFn,
@@ -23,8 +23,8 @@ function ResumeBuilder({
           <h3>General Info</h3>
         </div>
         <General
-          changeFn={generalStateChangeFn}
-          currentGenState={generalState}
+          submitFn={generalSubmitFn}
+          currentGeneralState={generalState}
         />
       </section>
       <section className="component-container education">
