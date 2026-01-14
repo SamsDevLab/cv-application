@@ -28,9 +28,7 @@ function App() {
     setEducationState([...educationState, newEducationComponent]);
   };
 
-  const handleEducationSubmitForm = (event, formData) => {
-    event.preventDefault();
-
+  const handleEducationSubmitForm = (formData) => {
     const updatedArr = educationState.map((object) => {
       if (object.id === formData.id) {
         return {

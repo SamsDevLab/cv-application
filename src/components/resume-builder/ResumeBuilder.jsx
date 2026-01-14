@@ -41,6 +41,7 @@ function ResumeBuilder({
             key={obj.id}
             educationDataObj={obj}
             submitFn={educationSubmitFn}
+            currentEducationState={educationState}
           />
         ))}
       </section>
