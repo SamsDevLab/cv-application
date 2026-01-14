@@ -3,7 +3,7 @@ import { useState } from "react";
 import FormElement from "../elements-and-inputs/FormElement";
 import DateRangeInput from "../elements-and-inputs/DateRangeInput";
 
-function Experience({ experienceDataObj, submitFn }) {
+function Experience({ experienceDataObj, submitFn, deleteFn }) {
   const [experienceFormDataState, setExperienceFormDataState] =
     useState(experienceDataObj);
 
@@ -90,7 +90,11 @@ function Experience({ experienceDataObj, submitFn }) {
         <button type="button" onClick={() => editValues()}>
           Edit
         </button>
-        <button className="delete-button" type="button">
+        <button
+          className="delete-button"
+          type="button"
+          onClick={() => deleteFn(experienceDataObj.id)}
+        >
           Delete
         </button>
       </div>

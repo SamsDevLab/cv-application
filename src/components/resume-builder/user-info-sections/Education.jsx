@@ -3,7 +3,7 @@ import { useState } from "react";
 import FormElement from "../elements-and-inputs/FormElement.jsx";
 import DateRangeInput from "../elements-and-inputs/DateRangeInput.jsx";
 
-function Education({ educationDataObj, submitFn }) {
+function Education({ educationDataObj, submitFn, deleteFn }) {
   const [educationFormDataState, setEducationFormDataState] =
     useState(educationDataObj);
 
@@ -81,7 +81,11 @@ function Education({ educationDataObj, submitFn }) {
         <button type="button" onClick={() => editValues()}>
           Edit
         </button>
-        <button className="delete-button" type="button">
+        <button
+          className="delete-button"
+          type="button"
+          onClick={() => deleteFn(educationDataObj.id)}
+        >
           Delete
         </button>
       </div>

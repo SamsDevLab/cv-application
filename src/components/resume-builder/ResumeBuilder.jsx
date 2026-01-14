@@ -9,9 +9,11 @@ function ResumeBuilder({
   educationState,
   addEducation,
   educationSubmitFn,
+  educationDelFn,
   experienceState,
   addExperience,
   experienceSubmitFn,
+  experienceDelFn,
 }) {
   // console.log(educationState);
   // console.log(experienceState);
@@ -41,7 +43,7 @@ function ResumeBuilder({
             key={obj.id}
             educationDataObj={obj}
             submitFn={educationSubmitFn}
-            currentEducationState={educationState}
+            deleteFn={educationDelFn}
           />
         ))}
       </section>
@@ -59,6 +61,7 @@ function ResumeBuilder({
             key={obj.id}
             experienceDataObj={obj}
             submitFn={experienceSubmitFn}
+            deleteFn={experienceDelFn}
           />
         ))}
       </section>

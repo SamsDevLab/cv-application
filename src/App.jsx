@@ -11,10 +11,18 @@ function App() {
   const [educationState, setEducationState] = useState(educationData);
   const [experienceState, setExperienceState] = useState(experienceData);
 
+  console.log(experienceState);
+
+  /*********************/
+  // General
+  /*********************/
   const handleGeneralStateSubmitForm = (formData) => {
     setGeneralState(formData);
   };
 
+  /*********************/
+  // Education
+  /*********************/
   const addEducationComponent = () => {
     const newEducationComponent = {
       id: crypto.randomUUID(),
@@ -47,6 +55,21 @@ function App() {
     setEducationState(updatedArr);
   };
 
+  const handleEducationDelete = (currentId) => {
+    const updatedArr = [];
+
+    educationState.map((object) => {
+      if (object.id !== currentId) {
+        updatedArr.push(object);
+      }
+    });
+
+    setEducationState(updatedArr);
+  };
+
+  /*********************/
+  // Experience
+  /*********************/
   const addExperienceComponent = () => {
     const newExperienceComponent = {
       id: crypto.randomUUID(),
@@ -81,6 +104,18 @@ function App() {
     setExperienceState(updatedArr);
   };
 
+  const handleExperienceDelete = (currentId) => {
+    const updatedArr = [];
+
+    experienceState.map((object) => {
+      if (object.id !== currentId) {
+        updatedArr.push(object);
+      }
+    });
+
+    setExperienceState(updatedArr);
+  };
+
   return (
     <>
       <main className="app">
@@ -90,9 +125,11 @@ function App() {
           educationState={educationState}
           addEducation={addEducationComponent}
           educationSubmitFn={handleEducationSubmitForm}
+          educationDelFn={handleEducationDelete}
           experienceState={experienceState}
           addExperience={addExperienceComponent}
           experienceSubmitFn={handleExperienceSubmitForm}
+          experienceDelFn={handleExperienceDelete}
         />
         <ResumePreview
           general={generalState}
