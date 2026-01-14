@@ -1,4 +1,11 @@
-function DateRangeInput({ changeFromDateFn, changeToDateFn, from, to }) {
+function DateRangeInput({
+  changeFromDateFn,
+  changeToDateFn,
+  from,
+  fromPlaceholder,
+  to,
+  toPlaceholder,
+}) {
   return (
     <div className="input-container">
       <div className="date-container">
@@ -7,7 +14,7 @@ function DateRangeInput({ changeFromDateFn, changeToDateFn, from, to }) {
           <input
             type="text"
             id="from"
-            placeholder="Aug 2007"
+            placeholder={fromPlaceholder}
             onChange={changeFromDateFn}
             value={from}
             required
@@ -18,7 +25,7 @@ function DateRangeInput({ changeFromDateFn, changeToDateFn, from, to }) {
           <input
             type="text"
             id="to"
-            placeholder="May 2011"
+            placeholder={toPlaceholder}
             onChange={changeToDateFn}
             value={to}
             required
