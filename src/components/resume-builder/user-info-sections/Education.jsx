@@ -7,8 +7,6 @@ function Education({ educationDataObj, submitFn }) {
   const [educationFormDataState, setEducationFormDataState] =
     useState(educationDataObj);
 
-  // console.log(educationFormDataState);
-
   const handleEducationFormDataState = (event) => {
     const prop = event.target.id;
 
@@ -18,12 +16,26 @@ function Education({ educationDataObj, submitFn }) {
     });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    submitFn(educationFormDataState);
+
+    setEducationFormDataState({
+      school: "",
+      location: "",
+      major: "",
+      from: "",
+      to: "",
+    });
+  };
+
   const editValues = () => {
-    setEducationFormDataState(educationFormDataState);
+    setEducationFormDataState(educationDataObj);
   };
 
   return (
-    <form onSubmit={(event) => submitFn(event, educationFormDataState)}>
+    <form onSubmit={handleSubmit}>
       <div>
         <FormElement
           inputType="text"
@@ -32,6 +44,7 @@ function Education({ educationDataObj, submitFn }) {
           minLength={1}
           maxLength={40}
           editFn={(event) => handleEducationFormDataState(event)}
+          placeholder={educationDataObj.school}
           value={educationFormDataState.school}
         />
       </div>
@@ -42,6 +55,7 @@ function Education({ educationDataObj, submitFn }) {
         minLength={1}
         maxLength={40}
         editFn={(event) => handleEducationFormDataState(event)}
+        placeholder={educationDataObj.location}
         value={educationFormDataState.location}
       />
       <FormElement
@@ -51,13 +65,16 @@ function Education({ educationDataObj, submitFn }) {
         minLength={1}
         maxLength={30}
         editFn={(event) => handleEducationFormDataState(event)}
+        placeholder={educationDataObj.major}
         value={educationFormDataState.major}
       />
       <DateRangeInput
         changeFromDateFn={(event) => handleEducationFormDataState(event)}
         changeToDateFn={(event) => handleEducationFormDataState(event)}
         from={educationFormDataState.from}
+        fromPlaceholder={educationDataObj.from}
         to={educationFormDataState.to}
+        toPlaceholder={educationDataObj.to}
       />
       <div className="button-container">
         <button type="submit">Submit</button>
