@@ -11,7 +11,8 @@ function App() {
   const [educationState, setEducationState] = useState(educationData);
   const [experienceState, setExperienceState] = useState(experienceData);
 
-  console.log(educationState);
+  // console.log(experienceState);
+  // console.log(educationState);
 
   const handleGeneralStateChange = (formData) => {
     setGeneralState(formData);
@@ -51,21 +52,58 @@ function App() {
     setEducationState(updatedArr);
   };
 
-  const handleExperienceStateChange = (formData) => {
-    setExperienceState(formData);
+  // const handleExperienceStateChange = (formData) => {
+  //   setExperienceState(formData);
+  // };
+
+  const addExperienceComponent = () => {
+    const newExperienceComponent = {
+      id: crypto.randomUUID(),
+      company: "",
+      location: "",
+      title: "",
+      from: "",
+      to: "",
+      responsibilities: "",
+    };
+
+    setExperienceState([...experienceState, newExperienceComponent]);
+  };
+
+  const handleExperienceSubmitForm = (event, formData) => {
+    event.preventDefault();
+
+    const updatedArr = experienceState.map((object) => {
+      if (object.id === formData.id) {
+        return {
+          ...object,
+          company: formData.company,
+          location: formData.location,
+          title: formData.title,
+          from: formData.from,
+          to: formData.to,
+          responsibilities: formData.responsibilities,
+        };
+      }
+
+      return object;
+    });
+
+    setExperienceState(updatedArr);
   };
 
   return (
     <>
       <main className="app">
         <ResumeBuilder
-          generalStateChangeFn={handleGeneralStateChange}
-          experienceStateChangeFn={handleExperienceStateChange}
           generalState={generalState}
+          generalStateChangeFn={handleGeneralStateChange}
           educationState={educationState}
-          experienceState={experienceState}
           addEducation={addEducationComponent}
           educationSubmitFn={handleEducationSubmitForm}
+          experienceState={experienceState}
+          addExperience={addExperienceComponent}
+          experienceSubmitFn={handleExperienceSubmitForm}
         />
         <ResumePreview
           general={generalState}

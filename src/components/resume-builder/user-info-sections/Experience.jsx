@@ -1,12 +1,11 @@
 import "../../../styles/SectionStyles.css";
 import { useState } from "react";
-import { experienceData } from "../../../data";
 import FormElement from "../elements-and-inputs/FormElement";
 import DateRangeInput from "../elements-and-inputs/DateRangeInput";
 
-function Experience({ changeFn, currentExperienceState }) {
+function Experience({ experienceDataObj, submitFn }) {
   const [experienceFormDataState, setExperienceFormDataState] =
-    useState(experienceData);
+    useState(experienceDataObj);
 
   const handleExperienceFormDataState = (event) => {
     const prop = event.target.id;
@@ -17,26 +16,12 @@ function Experience({ changeFn, currentExperienceState }) {
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    changeFn(experienceFormDataState);
-    setExperienceFormDataState({
-      company: "",
-      location: "",
-      title: "",
-      responsibilities: "",
-      from: "",
-      to: "",
-    });
-  };
-
   const editValues = () => {
-    setExperienceFormDataState(currentExperienceState);
+    setExperienceFormDataState(experienceFormDataState);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(event) => submitFn(event, experienceFormDataState)}>
       <FormElement
         inputType="text"
         inputId="company"
