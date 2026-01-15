@@ -4,8 +4,6 @@ import EducationPreview from "./section-previews/EducationPreview.jsx";
 import ExperiencePreview from "./section-previews/ExperiencePreview.jsx";
 
 function ResumePreview({ general, education, experience }) {
-  // console.log(experience);
-
   return (
     <section className="resume-preview">
       <div className="resume">
