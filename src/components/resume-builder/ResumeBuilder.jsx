@@ -15,11 +15,8 @@ function ResumeBuilder({
   experienceSubmitFn,
   experienceDelFn,
 }) {
-  // console.log(educationState);
-  // console.log(experienceState);
   return (
     <section className="resume-builder">
-      <h2>SDL's Resume Builder</h2>
       <section className="component-container general">
         <div className="component-header">
           <h3>General Info</h3>
