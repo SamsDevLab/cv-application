@@ -35,7 +35,7 @@ function Education({ educationDataObj, submitFn, deleteFn }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-container">
       <div>
         <FormElement
           inputType="text"
@@ -77,10 +77,12 @@ function Education({ educationDataObj, submitFn, deleteFn }) {
         toPlaceholder={educationDataObj.to}
       />
       <div className="button-container">
-        <button type="submit">Submit</button>
-        <button type="button" onClick={() => editValues()}>
-          Edit
-        </button>
+        <div className="submit-and-edit-container">
+          <button type="submit">Submit</button>
+          <button type="button" onClick={() => editValues()}>
+            Edit
+          </button>
+        </div>
         <button
           className="delete-button"
           type="button"

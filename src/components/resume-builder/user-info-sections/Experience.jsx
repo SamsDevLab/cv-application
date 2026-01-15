@@ -36,7 +36,7 @@ function Experience({ experienceDataObj, submitFn, deleteFn }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-container">
       <FormElement
         inputType="text"
         inputId="company"
@@ -85,11 +85,12 @@ function Experience({ experienceDataObj, submitFn, deleteFn }) {
         toPlaceholder={experienceDataObj.to}
       />
       <div className="button-container">
-        {" "}
-        <button type="submit">Submit</button>
-        <button type="button" onClick={() => editValues()}>
-          Edit
-        </button>
+        <div className="submit-and-edit-container">
+          <button type="submit">Submit</button>
+          <button type="button" onClick={() => editValues()}>
+            Edit
+          </button>
+        </div>
         <button
           className="delete-button"
           type="button"

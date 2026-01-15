@@ -54,11 +54,13 @@ function General({ submitFn, currentGeneralState }) {
         placeholder={currentGeneralState.phone}
         value={formDataState.phone}
       />
-      <div className="gen-button-container">
-        <button type="submit">Submit</button>
-        <button type="button" onClick={() => editFormValues()}>
-          Edit
-        </button>
+      <div className="button-container">
+        <div className="submit-and-edit-container">
+          <button type="submit">Submit</button>
+          <button type="button" onClick={() => editFormValues()}>
+            Edit
+          </button>
+        </div>
       </div>
     </form>
   );
