@@ -1,6 +1,6 @@
 function EducationPreview({ school, location, major, fromDate, toDate }) {
   return (
-    <>
+    <div className="all-details-container">
       <div className="details-container">
         <p>{school}</p>
         <p>{location}</p>
@@ -11,7 +11,7 @@ function EducationPreview({ school, location, major, fromDate, toDate }) {
           {fromDate} – {toDate}
         </p>
       </div>
-    </>
+    </div>
   );
 }
 

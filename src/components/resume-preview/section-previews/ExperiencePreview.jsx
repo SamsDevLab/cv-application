@@ -7,7 +7,7 @@ function ExperiencePreview({
   responsibilities,
 }) {
   return (
-    <>
+    <div className="all-details-container">
       <div className="details-container">
         <p>{company}</p>
         <p>{location}</p>
@@ -19,7 +19,7 @@ function ExperiencePreview({
         </p>
       </div>
       <p>{responsibilities}</p>
-    </>
+    </div>
   );
 }
 
