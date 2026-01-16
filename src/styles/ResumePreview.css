@@ -8,7 +8,7 @@
 
 .resume {
   background-color: white;
-  min-width: 87.5%;
+  min-width: 75%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
