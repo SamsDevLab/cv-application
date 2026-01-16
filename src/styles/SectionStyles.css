@@ -8,11 +8,17 @@ form {
 .input-container {
   display: flex;
   flex-direction: column;
-  min-width: 100%;
   gap: 0.25rem;
 }
 
-.input-container label {
+.date-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.input-container label,
+.date-container label {
   color: #c7cbd1;
   font-family: "Merriweather";
   font-size: 0.9rem;
@@ -30,22 +36,11 @@ form {
   font-size: 0.9rem;
 }
 
-.date-container {
-  display: flex;
-  justify-content: space-between;
-  min-width: 100%;
-  gap: 1rem;
-}
-
-.date-container input {
-  min-width: 45%;
-}
-
 .from-container,
 .to-container {
   display: flex;
+  flex-basis: 47.5%;
   flex-direction: column;
-  flex-basis: 50%;
   gap: 0.2rem;
 }
 
@@ -66,7 +61,6 @@ form {
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  min-width: 100%;
   min-height: 2rem;
   margin-top: 1rem;
   font-family: "Merriweather";
