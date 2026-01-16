@@ -7,12 +7,6 @@
   padding: 2rem;
   min-width: 35%;
   gap: 2rem;
-  scrollbar-width: none;
-  overflow: auto;
-}
-
-.resume-builder::-webkit-scrollbar {
-  display: none;
 }
 
 .component-container {
@@ -20,7 +14,7 @@
   flex-direction: column;
   align-items: start;
   background-color: #262b31;
-  min-width: 90%;
+  min-width: 100%;
   gap: 1rem;
   border-radius: 0.2rem;
   padding: 2rem;

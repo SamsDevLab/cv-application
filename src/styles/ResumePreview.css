@@ -14,13 +14,7 @@
   align-items: flex-start;
   padding: 2.25rem;
   margin-bottom: 1rem;
-  overflow: auto;
   border-radius: 0.2rem;
-  scrollbar-width: none;
-}
-
-.resume::-webkit-scrollbar {
-  display: none;
 }
 
 .header-line {

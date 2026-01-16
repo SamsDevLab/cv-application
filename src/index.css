@@ -11,6 +11,10 @@
     font: inherit;
   }
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   h1,
   h2,
   h3,
@@ -71,10 +75,5 @@
     flex-direction: column-reverse;
     min-height: 200vh;
     overflow: auto;
-  }
-
-  .resume-builder {
-    padding: 0rem;
-    margin: 0rem;
   }
 }
