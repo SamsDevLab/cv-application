@@ -1,16 +1,55 @@
-# React + Vite
+# 📄 CV Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CV Application for building resumes. Developed for [The Odin Project](https://www.theodinproject.com/) curriculum.
 
-Currently, two official plugins are available:
+## 💻 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- Vite
+- npm
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Resume builder
+- Resume preview
+- Submit, edit, delete resume fields
+- Responsive for tablet and mobile viewing
 
-## Expanding the ESLint configuration
+## What I Learned
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- State Management
+- Passing Props
+- Component Organization
+
+## 🏃‍♂️ To Run
+
+1. Clone Repo
+
+```
+git clone https://github.com/SamsDevLab/cv-application.git
+cd cv-application
+```
+
+2. Install npm
+
+`npm install`
+
+3. Run Dev Server
+
+`npm run dev `
+
+4. Open Vite Dev Server at http://localhost:5173/ in your browser
+
+## 📺 Screenshots
+
+Desktop View
+
+![alt text](screenshots/desktop-view.png)
+
+Tablet View
+
+![alt text](screenshots/tablet-view.png)
+
+Mobile View
+
+![alt text](screenshots/mobile-view.png)
