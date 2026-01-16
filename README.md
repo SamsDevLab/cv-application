@@ -44,12 +44,12 @@ cd cv-application
 
 Desktop View
 
-![alt text](screenshots/desktop-view.png)
+![alt text](photos/screenshots/desktop-view.png)
 
 Tablet View
 
-![alt text](screenshots/tablet-view.png)
+![alt text](photos/screenshots/tablet-view.png)
 
 Mobile View
 
-![alt text](screenshots/mobile-view.png)
+![alt text](photos/screenshots/mobile-view.png)
