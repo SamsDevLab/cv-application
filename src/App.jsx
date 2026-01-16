@@ -117,27 +117,25 @@ function App() {
   };
 
   return (
-    <>
-      <main className="app">
-        <ResumeBuilder
-          generalState={generalState}
-          generalSubmitFn={handleGeneralStateSubmitForm}
-          educationState={educationState}
-          addEducation={addEducationComponent}
-          educationSubmitFn={handleEducationSubmitForm}
-          educationDelFn={handleEducationDelete}
-          experienceState={experienceState}
-          addExperience={addExperienceComponent}
-          experienceSubmitFn={handleExperienceSubmitForm}
-          experienceDelFn={handleExperienceDelete}
-        />
-        <ResumePreview
-          general={generalState}
-          education={educationState}
-          experience={experienceState}
-        />
-      </main>
-    </>
+    <main className="app">
+      <ResumeBuilder
+        generalState={generalState}
+        generalSubmitFn={handleGeneralStateSubmitForm}
+        educationState={educationState}
+        addEducation={addEducationComponent}
+        educationSubmitFn={handleEducationSubmitForm}
+        educationDelFn={handleEducationDelete}
+        experienceState={experienceState}
+        addExperience={addExperienceComponent}
+        experienceSubmitFn={handleExperienceSubmitForm}
+        experienceDelFn={handleExperienceDelete}
+      />
+      <ResumePreview
+        general={generalState}
+        education={educationState}
+        experience={experienceState}
+      />
+    </main>
   );
 }
 
