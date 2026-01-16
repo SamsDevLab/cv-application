@@ -11,11 +11,6 @@
     font: inherit;
   }
 
-  body {
-    height: 100vh;
-    overflow: hidden;
-  }
-
   h1,
   h2,
   h3,
@@ -60,4 +55,26 @@
   font-family: "Merriweather";
   src: url("./assets/fonts/Merriweather-Light.woff2") format("woff2"),
     url("./assets/fonts/Merriweather-Light.woff") format("woff");
+}
+
+/* Tablet */
+@media (max-width: 1400px) {
+  .date-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Cell Phone */
+@media (max-width: 750px) {
+  .app {
+    flex-direction: column-reverse;
+    min-height: 200vh;
+    overflow: auto;
+  }
+
+  .resume-builder {
+    padding: 0rem;
+    margin: 0rem;
+  }
 }
