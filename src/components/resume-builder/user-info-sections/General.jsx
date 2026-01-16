@@ -3,7 +3,7 @@ import { useState } from "react";
 import FormElement from "../elements-and-inputs/FormElement.jsx";
 
 function General({ submitFn, currentGeneralState }) {
-  const [formDataState, setFormDataState] = useState(currentGeneralState);
+  const [formDataState, setFormDataState] = useState("");
 
   const handleFormDataState = (event) => {
     const prop = event.target.id;

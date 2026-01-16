@@ -4,8 +4,7 @@ import FormElement from "../elements-and-inputs/FormElement";
 import DateRangeInput from "../elements-and-inputs/DateRangeInput";
 
 function Experience({ experienceDataObj, submitFn, deleteFn }) {
-  const [experienceFormDataState, setExperienceFormDataState] =
-    useState(experienceDataObj);
+  const [experienceFormDataState, setExperienceFormDataState] = useState("");
 
   const handleExperienceFormDataState = (event) => {
     const prop = event.target.id;

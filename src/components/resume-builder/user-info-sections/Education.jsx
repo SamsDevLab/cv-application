@@ -4,8 +4,7 @@ import FormElement from "../elements-and-inputs/FormElement.jsx";
 import DateRangeInput from "../elements-and-inputs/DateRangeInput.jsx";
 
 function Education({ educationDataObj, submitFn, deleteFn }) {
-  const [educationFormDataState, setEducationFormDataState] =
-    useState(educationDataObj);
+  const [educationFormDataState, setEducationFormDataState] = useState("");
 
   const handleEducationFormDataState = (event) => {
     const prop = event.target.id;
